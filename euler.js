@@ -51,12 +51,12 @@ euler.functions['11'] = () => {
 	const ga11 = new GA({
 		grid,
 		population: 100,
-		crossover: 0.7,
-		mutation: 0.05,
+		crossRate: 0.5,
+		mutationRate: 0.05,
 		generations: 100
 	});
 
-	return ga11.evaluate([[11, 14], [11, 15], [11, 16], [11, 17]]);
+	return ga11.run();
 }
 
 euler.functions['10'] = () => {
