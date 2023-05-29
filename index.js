@@ -16,15 +16,18 @@ async function run() {
 		}
 	});
 
-	const method = euler.functions[prompt.problem.toString()];
-
 	console.clear();
 	console.log(figlet.textSync(json.name));
 	console.log('Working...');
+
+	const input = prompt.problem.split(', ');
+	const method = euler.functions[input[0]];
+	const args = input.slice(1);
+
 	console.time();
-	const answer = method();
+	const answer = method(...args);
 	console.timeEnd();
-	console.log(answer);
+	console.log('Answer: ', answer);
 
 	run()
 }
